@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    background-color: blue;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
