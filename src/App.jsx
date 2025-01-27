@@ -1,9 +1,13 @@
-function App() {
+import Header from "./components/Header/Header";
+import Menu from "./components/Menu/Menu";
+
+const App = () => {
   return (
     <>
-      <h1>Hello World</h1>
+      <Header />
+      <Menu />
     </>
   )
 }
 
-export default App
+export default App;
