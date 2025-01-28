@@ -1,0 +1,125 @@
+.modalFade {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: #222;
+}
+
+.modal h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.itemsContainer {
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #999;
+}
+
+.item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.item h3 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.item span {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.item strong {
+    font-size: 1rem;
+}
+
+.removeBtn {
+    border: none;
+    background-color: transparent;
+    padding: 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        color: #777;
+    }
+}
+
+.inputContainer {
+    margin-top: 1rem; /* Provisório */
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.inputContainer label {
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.inputContainer input {
+    width: 100%;
+    padding: 0.4rem;
+    outline: none;
+    border: 1px solid #999;
+    border-radius: 0.2rem;
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.closeBtn,
+.finalizeOrderBtn {
+    padding: 0.6rem 0.8rem;
+    border: none;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    color: #444;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.closeBtn:hover {
+    color: #777;
+}
+
+.finalizeOrderBtn {
+    background-color: green;
+    color: #fff;
+
+    &:hover {
+        background-color: hsl(120, 60%, 25%);
+    }
+}

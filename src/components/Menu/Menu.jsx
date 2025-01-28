@@ -1,7 +1,7 @@
 import burger from "../../assets/hamb-1.png";
 import refri from "../../assets/refri-1.png";
 
-import { BsFillCartPlusFill, BsFillCartDashFill } from "react-icons/bs";
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 import styles from "./Menu.module.css";
 
