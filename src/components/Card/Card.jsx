@@ -1,7 +1,7 @@
 import { BsFillCartPlusFill } from "react-icons/bs";
 import styles from "./Card.module.css";
 
-const Card = ({ title, img, description, price }) => {
+const Card = ({ title, img, description, price, addOnCart }) => {
     return (
         <div className={styles.card}>
             <div className={styles.img}>
@@ -12,7 +12,7 @@ const Card = ({ title, img, description, price }) => {
                 <p>{description}</p>
                 <div className={styles.flexContainer}>
                     <strong>R$ {price.toFixed(2)}</strong>
-                    <button>
+                    <button onClick={addOnCart}>
                         <BsFillCartPlusFill />
                     </button>
                 </div>

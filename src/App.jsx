@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import burger1 from "./assets/hamb-1.png";
 import burger2 from "./assets/hamb-2.png";
@@ -109,15 +109,48 @@ const App = () => {
         },
     ];
 
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+    const [cartIsOpen, setCartIsOpen] = useState(false);
+
+    useEffect(() => {
+        console.log(cart);
+    });
+
+    const addOnCart = (item) => {
+        setCart((prevCart) => {
+            const itemExists = prevCart.find(
+                (cartItem) => cartItem.id === item.id
+            );
+
+            if (itemExists) {
+                return prevCart.map((cartItem) =>
+                    cartItem.id === item.id
+                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                        : cartItem
+                );
+            } else {
+                return [...prevCart, { ...item, quantity: 1 }];
+            }
+        });
+    };
+
+    const removeToCart = (itemId) => {
+        setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+    };
 
     return (
         <>
             <Header />
-            <Menu menuItems={menuItems} />
-            <Footer />
+            <Menu menuItems={menuItems} addOnCart={addOnCart} />
+            <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 
-            {/* <CartModal /> */}
+            {cartIsOpen && (
+                <CartModal
+                    cart={cart}
+                    setCartIsOpen={setCartIsOpen}
+                    removeToCart={removeToCart}
+                />
+            )}
         </>
     );
 };

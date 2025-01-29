@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 import styles from "./Menu.module.css";
 
-const Menu = ({ menuItems }) => {
+const Menu = ({ menuItems, addOnCart }) => {
     return (
         <section className={styles.menuContainer}>
             <h1>Conheça nosso cardápio</h1>
@@ -17,6 +17,7 @@ const Menu = ({ menuItems }) => {
                             img={item.img}
                             description={item.description}
                             price={item.price}
+                            addOnCart={() => addOnCart(item)}
                         />
                     ))}
             </div>
@@ -32,6 +33,7 @@ const Menu = ({ menuItems }) => {
                             img={item.img}
                             description={item.description}
                             price={item.price}
+                            addOnCart={() => addOnCart(item)}
                         />
                     ))}
             </div>
