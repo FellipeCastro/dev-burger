@@ -107,8 +107,18 @@ const App = () => {
         },
     ];
 
-    const [cart, setCart] = useState([]);
+    // Recupera o carrinho salvo no localStorage
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem("cart");
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
+
     const [cartIsOpen, setCartIsOpen] = useState(false);
+
+    // Salva o carrinho no localStorage sempre que for atualizado
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
 
     const addOnCart = (item) => {
         setCart((prevCart) => {
