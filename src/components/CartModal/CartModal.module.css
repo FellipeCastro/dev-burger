@@ -73,6 +73,7 @@
 .quantityItem span {
     color: #222;
     font-weight: bold;
+    font-size: 0.8rem;
 }
 
 .item strong {
@@ -163,4 +164,13 @@
     display: block;
     margin: 0 auto;
     height: 30vh;
+}
+
+.error {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: crimson;
+    margin-bottom: 0.4rem;
 }

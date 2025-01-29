@@ -3,7 +3,8 @@ import cookingBro from "../../assets/cooking-bro.png";
 import { FaTrashAlt } from "react-icons/fa";
 import styles from "./CartModal.module.css";
 
-const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
+const CartModal = ({ cart, setCart, setCartIsOpen, removeToCart, updateQuantity }) => {
+    const [error, setError] = useState("");
     const [address, setAddress] = useState({
         street: "",
         number: "",
@@ -23,15 +24,78 @@ const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
 
     const handleFinalizeOrder = () => {
         const { street, number, neighborhood, city, state, cep } = address;
+        const comment = document.getElementById("comment").value;
 
-        if (!street || !number || !neighborhood || !city || !state || !cep) {
-            alert("Por favor, preencha todos os campos do endereço!");
+        if (cart.length === 0) {
+            setError("Seu carrinho está vazio!");
             return;
         }
 
-        console.log("Pedido finalizado com:", address, "Itens:", cart);
-        alert("Pedido finalizado! 🚀");
+        if (!street || !number || !neighborhood || !city || !state || !cep) {
+            setError("Por favor, preencha todos os campos do endereço!");
+            return;
+        }
+
+        let orderMessage = "🚀 *Novo Pedido Realizado!*\n\n";
+
+        orderMessage += "📍 *Endereço de Entrega:*\n";
+        orderMessage += `Rua: ${street}, Nº: ${number}\n`;
+        orderMessage += `Bairro: ${neighborhood}\n`;
+        orderMessage += `Cidade: ${city} - ${state}\n`;
+        orderMessage += `CEP: ${cep}\n\n`;
+
+        orderMessage += "🛒 *Itens do Pedido:*\n";
+        cart.forEach((item) => {
+            orderMessage += `- ${item.quantity}x ${item.title} (R$${(
+                item.price * item.quantity
+            ).toFixed(2)})\n`;
+        });
+
+        const totalPrice = cart.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+        );
+        orderMessage += `\n💰 *Total: R$ ${totalPrice.toFixed(2)}*\n`;
+
+        if (comment.trim()) {
+            orderMessage += `\n📝 *Comentário:* ${comment}\n`;
+        }
+
+        console.log(orderMessage);
+
         setCartIsOpen(false);
+        setCart([]);
+    };
+
+    const onBlurCep = (e) => {
+        const { value } = e.target;
+        const cep = value.replace(/\D/g, "");
+
+        if (cep.length !== 8) {
+            setError("O CEP deve conter 8 dígitos.");
+            return;
+        }
+
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.erro) {
+                    setError("CEP não encontrado!");
+                    return;
+                }
+
+                setAddress((prev) => ({
+                    ...prev,
+                    street: data.logradouro || "",
+                    neighborhood: data.bairro || "",
+                    city: data.localidade || "",
+                    state: data.uf || "",
+                    cep: value,
+                }));
+            })
+            .catch(() => {
+                setError("Erro ao buscar CEP. Tente novamente.");
+            });
     };
 
     return (
@@ -98,32 +162,37 @@ const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
                     )}
                 </div>
 
-                {cart.length !== 0 && (
-                    <div className={styles.inputContainer}>
-                        <label htmlFor="comment">Comentário: </label>
-                        <input
-                            type="text"
-                            name="comment"
-                            id="comment"
-                            placeholder="Ex. Lanche sem cebola"
-                        />
-                    </div>
-                )}
-
+                <div className={styles.inputContainer}>
+                    <label htmlFor="comment">Comentário: </label>
+                    <input
+                        type="text"
+                        name="comment"
+                        id="comment"
+                        placeholder="Ex. Lanche sem cebola"
+                    />
+                </div>
                 <h3 className={styles.label}>Endereço de Entrega</h3>
                 <div className={styles.addressContainer}>
                     <input
                         type="text"
-                        name="street"
-                        placeholder="Rua"
-                        value={address.street}
+                        name="cep"
+                        placeholder="CEP"
+                        value={address.cep}
                         onChange={handleChange}
+                        onBlur={onBlurCep}
                     />
                     <input
                         type="text"
                         name="number"
                         placeholder="Número"
                         value={address.number}
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="text"
+                        name="street"
+                        placeholder="Rua"
+                        value={address.street}
                         onChange={handleChange}
                     />
                     <input
@@ -147,13 +216,10 @@ const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
                         value={address.state}
                         onChange={handleChange}
                     />
-                    <input
-                        type="text"
-                        name="cep"
-                        placeholder="CEP"
-                        value={address.cep}
-                        onChange={handleChange}
-                    />
+                </div>
+
+                <div className={styles.error}>
+                    <p>{error}</p>
                 </div>
 
                 <div className={styles.flexContainer}>

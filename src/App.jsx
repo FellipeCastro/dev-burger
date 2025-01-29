@@ -151,6 +151,7 @@ const App = () => {
             {cartIsOpen && (
                 <CartModal
                     cart={cart}
+                    setCart={setCart}
                     setCartIsOpen={setCartIsOpen}
                     removeToCart={removeToCart}
                     updateQuantity={updateQuantity}
