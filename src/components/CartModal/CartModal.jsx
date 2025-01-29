@@ -12,8 +12,12 @@ const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
             <div className={styles.modalFade} onClick={closeModal}></div>
 
             <div className={styles.modal}>
-                <h2>Seu Carrinho</h2>
-
+                <div className={styles.flexContainer}>
+                    <h2>Seu Carrinho</h2>{" "}
+                    <button className={styles.closeBtn} onClick={closeModal}>
+                        Fechar
+                    </button>
+                </div>
                 <div className={styles.itemsContainer}>
                     {cart.map((cartItem) => (
                         <div className={styles.item} key={cartItem.id}>
@@ -59,17 +63,15 @@ const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
                         </p>
                     )}
                 </div>
-
-                <strong className={styles.totalPrice}>
-                    Total: R${" "}
-                    {cart
-                        .reduce(
-                            (total, item) => total + item.price * item.quantity,
-                            0
-                        )
-                        .toFixed(2)}
-                </strong>
-
+                <div className={styles.inputContainer}>
+                    <label htmlFor="comment">Comentário: </label>
+                    <input
+                        type="text"
+                        name="comment"
+                        id="comment"
+                        placeholder="Ex. Lanche sem cebola"
+                    />
+                </div>
                 <div className={styles.inputContainer}>
                     <label htmlFor="address">Endereço de entrega: </label>
                     <input
@@ -79,11 +81,17 @@ const CartModal = ({ cart, setCartIsOpen, removeToCart, updateQuantity }) => {
                         placeholder="Digite seu endereço completo"
                     />
                 </div>
-
                 <div className={styles.flexContainer}>
-                    <button className={styles.closeBtn} onClick={closeModal}>
-                        Fechar
-                    </button>
+                    <strong className={styles.totalPrice}>
+                        Total: R${" "}
+                        {cart
+                            .reduce(
+                                (total, item) =>
+                                    total + item.price * item.quantity,
+                                0
+                            )
+                            .toFixed(2)}
+                    </strong>
 
                     <button className={styles.finalizeOrderBtn}>
                         Finalizar pedido
