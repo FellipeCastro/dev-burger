@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import burger1 from "./assets/hamb-1.png";
 import burger2 from "./assets/hamb-2.png";
 import burger3 from "./assets/hamb-3.png";
@@ -10,7 +9,6 @@ import burger7 from "./assets/hamb-7.png";
 import burger8 from "./assets/hamb-8.png";
 import refri1 from "./assets/refri-1.png";
 import refri2 from "./assets/refri-2.png";
-
 import CartModal from "./components/CartModal/CartModal";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -111,10 +109,6 @@ const App = () => {
 
     const [cart, setCart] = useState([]);
     const [cartIsOpen, setCartIsOpen] = useState(false);
-
-    useEffect(() => {
-        console.log(cart);
-    });
 
     const addOnCart = (item) => {
         setCart((prevCart) => {

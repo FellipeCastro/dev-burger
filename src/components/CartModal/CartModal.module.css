@@ -20,9 +20,9 @@
 }
 
 .modal h2 {
+    color: #222;
     text-align: center;
     font-size: 1.6rem;
-    margin-bottom: 1rem;
 }
 
 .itemsContainer {
@@ -48,6 +48,7 @@
 .item h3 {
     font-size: 1rem;
     font-weight: bold;
+    color: #222;
 }
 
 .quantityItem {
@@ -94,16 +95,25 @@
 .inputContainer {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
     margin-bottom: 1rem;
 }
 
-.inputContainer label {
+.inputContainer label,
+.label {
     font-weight: bold;
     font-size: 0.8rem;
+    margin-bottom: 0.4rem;
 }
 
-.inputContainer input {
+.addressContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.inputContainer input,
+.addressContainer input {
     width: 100%;
     padding: 0.4rem;
     outline: none;
@@ -144,7 +154,13 @@
 
 .emptyCart {
     text-align: center;
-    margin-bottom: 1rem;
     font-weight: bold;
     color: #999;
+    margin-top: 1rem;
+}
+
+.emptyCartImg {
+    display: block;
+    margin: 0 auto;
+    height: 30vh;
 }

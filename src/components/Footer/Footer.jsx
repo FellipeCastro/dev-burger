@@ -1,5 +1,4 @@
 import { BsFillCartFill } from "react-icons/bs";
-
 import styles from "./Footer.module.css";
 
 const Footer = ({ setCartIsOpen, cart }) => {
