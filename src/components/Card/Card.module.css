@@ -31,6 +31,18 @@
     justify-content: space-around;
 }
 
+.quantityItem {
+    background-color: brown;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
 .textContainer h3 {
     font-size: 1.1rem;
     color: #222;

@@ -138,10 +138,20 @@ const App = () => {
         setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
     };
 
+    const updateQuantity = (itemId, change) => {
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === itemId
+                    ? { ...item, quantity: Math.max(1, item.quantity + change) }
+                    : item
+            )
+        );
+    };
+
     return (
         <>
             <Header />
-            <Menu menuItems={menuItems} addOnCart={addOnCart} />
+            <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 
             {cartIsOpen && (
@@ -149,6 +159,7 @@ const App = () => {
                     cart={cart}
                     setCartIsOpen={setCartIsOpen}
                     removeToCart={removeToCart}
+                    updateQuantity={updateQuantity}
                 />
             )}
         </>

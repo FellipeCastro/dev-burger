@@ -1,13 +1,14 @@
 import { BsFillCartPlusFill } from "react-icons/bs";
 import styles from "./Card.module.css";
 
-const Card = ({ title, img, description, price, addOnCart }) => {
+const Card = ({ title, img, description, price, quantity, addOnCart }) => {
     return (
         <div className={styles.card}>
             <div className={styles.img}>
                 <img src={img} alt={title} />
             </div>
             <div className={styles.textContainer}>
+                {quantity > 0 && <span className={styles.quantityItem}>{quantity}</span>}
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <div className={styles.flexContainer}>
