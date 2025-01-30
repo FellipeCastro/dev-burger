@@ -48,15 +48,15 @@ const CartModal = ({
             return;
         }
 
-        let orderMessage = "🚀 *Novo Pedido Realizado!*\n\n";
+        let orderMessage = "*Novo Pedido Realizado!*\n\n";
 
-        orderMessage += "📍 *Endereço de Entrega:*\n";
+        orderMessage += "*Endereço de Entrega:*\n";
         orderMessage += `Rua: ${street}, Nº: ${number}\n`;
         orderMessage += `Bairro: ${neighborhood}\n`;
         orderMessage += `Cidade: ${city} - ${state}\n`;
         orderMessage += `CEP: ${cep}\n\n`;
 
-        orderMessage += "🛒 *Itens do Pedido:*\n";
+        orderMessage += "*Itens do Pedido:*\n";
         cart.forEach((item) => {
             orderMessage += `- ${item.quantity}x ${item.title} (R$${(
                 item.price * item.quantity
@@ -67,10 +67,10 @@ const CartModal = ({
             (total, item) => total + item.price * item.quantity,
             0
         );
-        orderMessage += `\n💰 *Total: R$ ${totalPrice.toFixed(2)}*\n`;
+        orderMessage += `\n*Total: R$ ${totalPrice.toFixed(2)}*\n`;
 
         if (comment.trim()) {
-            orderMessage += `\n📝 *Comentário:* ${comment}\n`;
+            orderMessage += `\n*Comentário:* ${comment}\n`;
         }
 
         const phone = 11940618163;
