@@ -13,14 +13,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: var(--white);
     padding: 1rem;
     border-radius: 0.4rem;
-    color: #222;
 }
 
 .modal h2 {
-    color: #222;
     text-align: center;
     font-size: 1.6rem;
 }
@@ -30,7 +28,7 @@
     max-height: 40vh;
     margin-bottom: 1rem;
     scrollbar-width: thin; 
-    scrollbar-color: #999 #fff; 
+    scrollbar-color: var(--gray) var(--white); 
 }
 
 .item {
@@ -38,7 +36,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.6rem 0;
-    border-bottom: 1px solid #999;
+    border-bottom: 0.1rem solid var(--gray);
 }
 
 .textContainer {
@@ -58,12 +56,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 0.1rem solid #999;
+    border: 0.1rem solid var(--gray);
     border-radius: 0.2rem;
 }
 
 .quantityItem button {
-    color: #999;
+    color: var(--gray);
     font-size: 1rem;
     font-weight: bold;
     padding: 0.2rem 0.4rem;
@@ -73,7 +71,6 @@
 }
 
 .quantityItem span {
-    color: #222;
     font-weight: bold;
     font-size: 0.8rem;
 }
@@ -91,7 +88,7 @@
     transition: 0.2s;
 
     &:hover {
-        color: #777;
+        color: var(--gray);
     }
 }
 
@@ -120,7 +117,7 @@
     width: 100%;
     padding: 0.4rem;
     outline: none;
-    border: 1px solid #999;
+    border: 0.1rem solid var(--gray);
     border-radius: 0.2rem;
 }
 
@@ -136,25 +133,21 @@
     border: none;
     border-radius: 0.2rem;
     font-weight: bold;
-    color: #999;
+    color: var(--gray);
     background-color: transparent;
     cursor: pointer;
     transition: 0.2s;
 }
 
 .finalizeOrderBtn {
-    background-color: green;
-    color: #fff;
-
-    &:hover {
-        background-color: hsl(120, 61%, 25%);
-    }
+    background-color: var(--green);
+    color: var(--white);
 }
 
 .emptyCart {
     text-align: center;
     font-weight: bold;
-    color: #999;
+    color: var(--gray);
     margin-top: 1rem;
 }
 
@@ -169,7 +162,7 @@
     text-align: center;
     font-weight: bold;
     font-size: 0.8rem;
-    color: crimson;
+    color: var(--red);
     margin-bottom: 0.4rem;
 }
 
@@ -178,7 +171,7 @@
     text-align: justify;
     font-weight: bold;
     font-size: 0.8rem;
-    color: #999;
+    color: var(--gray);
     margin-top: 1rem;
 }
 
