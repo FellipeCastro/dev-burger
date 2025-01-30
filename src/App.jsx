@@ -3,11 +3,9 @@ import CartModal from "./components/CartModal/CartModal";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
-import menuItems from "./constants/menuItems";
+import menuItems from "./constants/menuItems.js";
 
 const App = () => {
-
-    // Recupera o carrinho salvo no localStorage
     const [cart, setCart] = useState(() => {
         const savedCart = localStorage.getItem("cart");
         return savedCart ? JSON.parse(savedCart) : [];
@@ -15,7 +13,6 @@ const App = () => {
 
     const [cartIsOpen, setCartIsOpen] = useState(false);
 
-    // Salva o carrinho no localStorage sempre que for atualizado
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
@@ -55,22 +52,25 @@ const App = () => {
     const openHour = 17;
     const closeHour = 23;
     const closedDays = []; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
-    
+
     const checkRestaurantOpen = () => {
         const date = new Date();
         const day = date.getDay();
         const hour = date.getHours();
         const minute = date.getMinutes();
-    
+
         if (closedDays.includes(day)) {
             return false;
         }
-    
-        return hour >= openHour && (hour < closeHour || (hour === closeHour && minute === 0));
+
+        return (
+            hour >= openHour &&
+            (hour < closeHour || (hour === closeHour && minute === 0))
+        );
     };
-    
+
     const isRestaurantOpen = checkRestaurantOpen();
-    
+
     return (
         <>
             <Header isRestaurantOpen={isRestaurantOpen} />

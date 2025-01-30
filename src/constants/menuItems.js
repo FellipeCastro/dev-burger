@@ -9,7 +9,7 @@ import burger8 from "../assets/hamb-8.png";
 import refri1 from "../assets/refri-1.png";
 import refri2 from "../assets/refri-2.png";
 
-export default menuItems = [
+const menuItems = [
     {
         id: 1,
         category: "Hambúrgueres",
@@ -100,3 +100,5 @@ export default menuItems = [
         price: 5.5,
     },
 ];
+
+export default menuItems;

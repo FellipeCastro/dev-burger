@@ -142,6 +142,10 @@
 .finalizeOrderBtn {
     background-color: var(--green);
     color: var(--white);
+
+    &:hover {
+        background-color: var(--green-hover);
+    }
 }
 
 .emptyCart {
@@ -162,8 +166,11 @@
     text-align: center;
     font-weight: bold;
     font-size: 0.8rem;
+    background-color: var(--light-red);
     color: var(--red);
-    margin-bottom: 0.4rem;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 
 .whatsappMsg {

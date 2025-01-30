@@ -3,9 +3,12 @@
 :root {
   --body-bg: #f6f7f8;
   --black: #222;
+  --black-hover: #666;
   --white: #fff;
   --green: #008000;
+  --green-hover: hsl(120, 60%, 25%);
   --red: #dc143c;
+  --light-red:#f8d7da;
   --gray: #999;
   --main-color: #a52a2a;
   --text-color: #2a2a2a;

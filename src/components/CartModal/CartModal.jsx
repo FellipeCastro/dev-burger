@@ -11,7 +11,7 @@ const CartModal = ({
     updateQuantity,
     isRestaurantOpen,
 }) => {
-    const [error, setError] = useState("");
+    const [error, setError] = useState(null);
     const [address, setAddress] = useState({
         street: "",
         number: "",
@@ -32,7 +32,7 @@ const CartModal = ({
     const handleFinalizeOrder = () => {
         const { street, number, neighborhood, city, state, cep } = address;
         const comment = document.getElementById("comment").value;
-    
+
         if (!isRestaurantOpen) {
             setError("O restaurante esta fechado.");
             return;
@@ -42,41 +42,45 @@ const CartModal = ({
             setError("Seu carrinho está vazio!");
             return;
         }
-    
+
         if (!street || !number || !neighborhood || !city || !state || !cep) {
             setError("Por favor, preencha todos os campos do endereço!");
             return;
         }
-    
-        // Criando a mensagem formatada
+
         let orderMessage = "🚀 *Novo Pedido Realizado!*\n\n";
-    
+
         orderMessage += "📍 *Endereço de Entrega:*\n";
         orderMessage += `Rua: ${street}, Nº: ${number}\n`;
         orderMessage += `Bairro: ${neighborhood}\n`;
         orderMessage += `Cidade: ${city} - ${state}\n`;
         orderMessage += `CEP: ${cep}\n\n`;
-    
+
         orderMessage += "🛒 *Itens do Pedido:*\n";
         cart.forEach((item) => {
-            orderMessage += `- ${item.quantity}x ${item.title} (R$${(item.price * item.quantity).toFixed(2)})\n`;
+            orderMessage += `- ${item.quantity}x ${item.title} (R$${(
+                item.price * item.quantity
+            ).toFixed(2)})\n`;
         });
-    
-        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+
+        const totalPrice = cart.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+        );
         orderMessage += `\n💰 *Total: R$ ${totalPrice.toFixed(2)}*\n`;
-    
+
         if (comment.trim()) {
             orderMessage += `\n📝 *Comentário:* ${comment}\n`;
         }
-    
+
         const phone = 11940618163;
         const encodedMessage = encodeURIComponent(orderMessage);
 
         window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");
-    
+
         setCartIsOpen(false);
         setCart([]);
-    };    
+    };
 
     const onBlurCep = (e) => {
         const { value } = e.target;
@@ -229,9 +233,11 @@ const CartModal = ({
                     />
                 </div>
 
-                <div className={styles.error}>
-                    <p>{error}</p>
-                </div>
+                {error !== null && (
+                    <div className={styles.error}>
+                        <p>{error}</p>
+                    </div>
+                )}
 
                 <div className={styles.flexContainer}>
                     <strong className={styles.totalPrice}>
@@ -253,7 +259,11 @@ const CartModal = ({
                     </button>
                 </div>
                 <div className={styles.whatsappMsg}>
-                    <p>Após finalizar o pedido, você será redirecionado para o nosso WhatsApp, onde poderá acompanhá-lo em tempo real! 📲🚀</p>
+                    <p>
+                        Após finalizar o pedido, você será redirecionado para o
+                        nosso WhatsApp, onde poderá acompanhá-lo em tempo real!
+                        📲🚀
+                    </p>
                 </div>
             </div>
         </>
