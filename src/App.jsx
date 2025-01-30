@@ -171,7 +171,6 @@ const App = () => {
     
     const isRestaurantOpen = checkRestaurantOpen();
     
-
     return (
         <>
             <Header isRestaurantOpen={isRestaurantOpen} />
@@ -185,6 +184,7 @@ const App = () => {
                     setCartIsOpen={setCartIsOpen}
                     removeToCart={removeToCart}
                     updateQuantity={updateQuantity}
+                    isRestaurantOpen={isRestaurantOpen}
                 />
             )}
         </>

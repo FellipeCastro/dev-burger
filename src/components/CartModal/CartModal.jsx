@@ -9,6 +9,7 @@ const CartModal = ({
     setCartIsOpen,
     removeToCart,
     updateQuantity,
+    isRestaurantOpen,
 }) => {
     const [error, setError] = useState("");
     const [address, setAddress] = useState({
@@ -32,6 +33,11 @@ const CartModal = ({
         const { street, number, neighborhood, city, state, cep } = address;
         const comment = document.getElementById("comment").value;
     
+        if (!isRestaurantOpen) {
+            setError("O restaurante esta fechado.");
+            return;
+        }
+
         if (cart.length === 0) {
             setError("Seu carrinho está vazio!");
             return;
