@@ -7,7 +7,7 @@ const Header = ({ isRestaurantOpen }) => {
             <img src={logo} alt="Logo" />
             <h1>Dev Burger</h1>
             <a href="#" target="_blank" className={styles.address}>Rua dos Bobos 00, São Paulo - SP</a>
-            <span className={isRestaurantOpen ? styles.open : styles.closed}>Seg. a Dom. – 17h às 23h</span>
+            <span className={isRestaurantOpen ? styles.open : styles.closed}>Seg. a Dom. – 12h às 23h</span>
         </header>
     );
 };
