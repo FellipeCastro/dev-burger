@@ -136,14 +136,10 @@
     border: none;
     border-radius: 0.2rem;
     font-weight: bold;
-    color: #444;
+    color: #999;
     background-color: transparent;
     cursor: pointer;
     transition: 0.2s;
-}
-
-.closeBtn:hover {
-    color: #777;
 }
 
 .finalizeOrderBtn {
@@ -184,4 +180,10 @@
     font-size: 0.8rem;
     color: #999;
     margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .modal {
+        width: 90%;
+    }
 }

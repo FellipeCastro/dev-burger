@@ -152,9 +152,29 @@ const App = () => {
         );
     };
 
+    const openHour = 17;
+    const closeHour = 23;
+    const closedDays = []; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
+    
+    const checkRestaurantOpen = () => {
+        const date = new Date();
+        const day = date.getDay();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+    
+        if (closedDays.includes(day)) {
+            return false;
+        }
+    
+        return hour >= openHour && (hour < closeHour || (hour === closeHour && minute === 0));
+    };
+    
+    const isRestaurantOpen = checkRestaurantOpen();
+    
+
     return (
         <>
-            <Header />
+            <Header isRestaurantOpen={isRestaurantOpen} />
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 

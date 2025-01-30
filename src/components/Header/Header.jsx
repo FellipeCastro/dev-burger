@@ -1,13 +1,13 @@
 import logo from "../../assets/hamb-1.png";
 import styles from "./Header.module.css";
 
-const Header = () => {
+const Header = ({ isRestaurantOpen }) => {
     return (
         <header className={styles.header}>
             <img src={logo} alt="Logo" />
             <h1>Dev Burger</h1>
-            <span className={styles.address}>Rua dos Bobos 00, São Paulo - SP</span>
-            <span className={styles.businessHours}>Seg. a Dom. – 18h às 22h</span>
+            <a href="#" target="_blank" className={styles.address}>Rua dos Bobos 00, São Paulo - SP</a>
+            <span className={isRestaurantOpen ? styles.open : styles.closed}>Seg. a Dom. – 17h às 23h</span>
         </header>
     );
 };
