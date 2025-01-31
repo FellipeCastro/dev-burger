@@ -27,8 +27,8 @@
     overflow-y: scroll;
     max-height: 40vh;
     margin-bottom: 1rem;
-    scrollbar-width: thin; 
-    scrollbar-color: var(--gray) var(--white); 
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray) var(--white);
 }
 
 .item {
@@ -52,7 +52,7 @@
 }
 
 .quantityItem {
-    width: 100px;
+    width: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
