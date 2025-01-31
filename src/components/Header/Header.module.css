@@ -2,9 +2,10 @@
     padding: 4rem 0;
     display: grid;
     place-items: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../assets/bg.png");
-    background-size: cover; 
-    background-position: center; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("../../assets/bg.png");
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     color: var(--white);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);

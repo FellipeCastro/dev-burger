@@ -8,7 +8,9 @@ const Card = ({ title, img, description, price, quantity, addOnCart }) => {
                 <img src={img} alt={title} />
             </div>
             <div className={styles.textContainer}>
-                {quantity > 0 && <span className={styles.quantityItem}>{quantity}</span>}
+                {quantity > 0 && (
+                    <span className={styles.quantityItem}>{quantity}</span>
+                )}
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <div className={styles.flexContainer}>
