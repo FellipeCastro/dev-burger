@@ -73,7 +73,7 @@ const CartModal = ({
             orderMessage += `\n*Comentário:* ${comment}\n`;
         }
 
-        const phone = 11940618163;
+        const phone = 5511940618163;
         const encodedMessage = encodeURIComponent(orderMessage);
 
         window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");
