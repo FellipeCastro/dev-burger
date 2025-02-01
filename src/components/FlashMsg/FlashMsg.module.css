@@ -8,6 +8,7 @@
     font-size: 0.8rem;
     font-weight: bold;
     border-radius: 0.2rem;
+    z-index: 9;
 }
 
 .flashMsg button {
