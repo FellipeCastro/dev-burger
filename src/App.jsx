@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import menuItems from "./constants/menuItems.js";
+import FlashMsg from "./components/FlashMsg/FlashMsg.jsx";
 
 const App = () => {
     const [cart, setCart] = useState(() => {
@@ -12,6 +13,8 @@ const App = () => {
     });
 
     const [cartIsOpen, setCartIsOpen] = useState(false);
+
+    const [flashMsg, setFlashMsg] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -50,7 +53,7 @@ const App = () => {
     };
 
     const openHour = 13;
-    const closeHour = 23;
+    const closeHour = 24;
     const closedDays = []; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
 
     const checkRestaurantOpen = () => {
@@ -73,6 +76,7 @@ const App = () => {
 
     return (
         <>
+            {flashMsg && <FlashMsg setFlashMsg={setFlashMsg} />}
             <Header isRestaurantOpen={isRestaurantOpen} />
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
@@ -85,6 +89,7 @@ const App = () => {
                     removeToCart={removeToCart}
                     updateQuantity={updateQuantity}
                     isRestaurantOpen={isRestaurantOpen}
+                    setFlashMsg={setFlashMsg}
                 />
             )}
         </>

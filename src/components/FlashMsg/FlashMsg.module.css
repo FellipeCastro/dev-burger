@@ -1,0 +1,23 @@
+.flashMsg {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    padding: 1rem 2rem;
+    background-color: var(--light-green);
+    color: var(--green);
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 0.2rem;
+}
+
+.flashMsg button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    padding: 0.2rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--green);
+    cursor: pointer;
+}

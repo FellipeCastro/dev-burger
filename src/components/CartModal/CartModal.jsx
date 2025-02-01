@@ -10,6 +10,7 @@ const CartModal = ({
     removeToCart,
     updateQuantity,
     isRestaurantOpen,
+    setFlashMsg,
 }) => {
     const [error, setError] = useState(null);
     const [address, setAddress] = useState({
@@ -80,6 +81,7 @@ const CartModal = ({
 
         setCartIsOpen(false);
         setCart([]);
+        setFlashMsg(true);
     };
 
     const onBlurCep = (e) => {
