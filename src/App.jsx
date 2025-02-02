@@ -54,7 +54,7 @@ const App = () => {
 
     const openHour = 13;
     const closeHour = 23;
-    const closedDays = []; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
+    const closedDays = [1]; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
 
     const checkRestaurantOpen = () => {
         const date = new Date();
@@ -77,7 +77,7 @@ const App = () => {
     return (
         <>
             {flashMsg && <FlashMsg setFlashMsg={setFlashMsg} />}
-            <Header isRestaurantOpen={isRestaurantOpen} />
+            <Header isRestaurantOpen={isRestaurantOpen} openHour={openHour} closeHour={closeHour} />
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 
