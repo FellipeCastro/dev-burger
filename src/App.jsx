@@ -54,7 +54,7 @@ const App = () => {
 
     const openHour = 13;
     const closeHour = 23;
-    const closedDays = [1]; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
+    const closedDays = []; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
 
     const checkRestaurantOpen = () => {
         const date = new Date();
