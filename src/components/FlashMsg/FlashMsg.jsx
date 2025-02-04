@@ -1,4 +1,4 @@
-import { MdClose } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 import styles from "./FlashMsg.module.css";
 
 const FlashMsg = ({ setFlashMsg }) => {
@@ -6,7 +6,7 @@ const FlashMsg = ({ setFlashMsg }) => {
         <div className={styles.flashMsg}>
             <span>Acompoanhe seu pedido pelo Whatsapp!</span>
             <button onClick={() => setFlashMsg(false)}>
-                <MdClose />
+                <IoClose />
             </button>
         </div>
     );
