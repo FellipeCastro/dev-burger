@@ -1,4 +1,4 @@
-.flashMsg {
+.flashMessage {
     position: fixed;
     top: 1rem;
     left: 1rem;
@@ -9,9 +9,14 @@
     font-weight: bold;
     border-radius: 0.2rem;
     z-index: 9;
+    transition: 0.2s;
 }
 
-.flashMsg button {
+.closeMsg {
+    left: -100%;
+}
+
+.flashMessage button {
     position: absolute;
     top: 0.1rem;
     right: 0.1rem;
