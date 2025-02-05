@@ -109,6 +109,7 @@ const CartModal = ({
                     state: data.uf || "",
                     cep: value,
                 }));
+                setError(null);
             })
             .catch(() => {
                 setError("Erro ao buscar CEP. Tente novamente.");
