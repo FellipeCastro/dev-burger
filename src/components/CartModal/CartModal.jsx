@@ -90,6 +90,13 @@ const CartModal = ({
 
         if (cep.length !== 8) {
             setError("O CEP deve conter 8 dígitos.");
+            setAddress({
+                street: "",
+                number: "",
+                neighborhood: "",
+                city: "",
+                state: "",
+            });
             return;
         }
 
@@ -98,6 +105,13 @@ const CartModal = ({
             .then((data) => {
                 if (data.erro) {
                     setError("CEP não encontrado!");
+                    setAddress({
+                        street: "",
+                        number: "",
+                        neighborhood: "",
+                        city: "",
+                        state: "",
+                    });
                     return;
                 }
 
@@ -113,6 +127,13 @@ const CartModal = ({
             })
             .catch(() => {
                 setError("Erro ao buscar CEP. Tente novamente.");
+                setAddress({
+                    street: "",
+                    number: "",
+                    neighborhood: "",
+                    city: "",
+                    state: "",
+                });
             });
     };
 

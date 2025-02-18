@@ -77,7 +77,11 @@ const App = () => {
     return (
         <>
             <FlashMsg flashMsg={flashMsg} setFlashMsg={setFlashMsg} />
-            <Header isRestaurantOpen={isRestaurantOpen} openHour={openHour} closeHour={closeHour} />
+            <Header
+                isRestaurantOpen={isRestaurantOpen}
+                openHour={openHour}
+                closeHour={closeHour}
+            />
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 
