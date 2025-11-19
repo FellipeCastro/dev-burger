@@ -3,8 +3,8 @@ import CartModal from "./components/CartModal/CartModal";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
+import FlashMsg from "./components/FlashMsg/FlashMsg";
 import menuItems from "./constants/menuItems.js";
-import FlashMsg from "./components/FlashMsg/FlashMsg.jsx";
 
 const App = () => {
     const [cart, setCart] = useState(() => {
@@ -77,11 +77,13 @@ const App = () => {
     return (
         <>
             <FlashMsg flashMsg={flashMsg} setFlashMsg={setFlashMsg} />
+
             <Header
                 isRestaurantOpen={isRestaurantOpen}
                 openHour={openHour}
                 closeHour={closeHour}
             />
+
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 

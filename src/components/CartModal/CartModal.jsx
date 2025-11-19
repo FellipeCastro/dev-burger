@@ -13,6 +13,7 @@ const CartModal = ({
     setFlashMsg,
 }) => {
     const [error, setError] = useState(null);
+    const [comment, setComment] = useState(null)
     const [address, setAddress] = useState({
         street: "",
         number: "",
@@ -32,7 +33,6 @@ const CartModal = ({
 
     const handleFinalizeOrder = () => {
         const { street, number, neighborhood, city, state, cep } = address;
-        const comment = document.getElementById("comment").value;
 
         if (!isRestaurantOpen) {
             setError("O restaurante esta fechado.");
@@ -49,15 +49,15 @@ const CartModal = ({
             return;
         }
 
-        let orderMessage = "*Novo Pedido Realizado!*\n\n";
+        let orderMessage = "Novo Pedido Realizado!\n\n";
 
-        orderMessage += "*Endereço de Entrega:*\n";
+        orderMessage += "Endereço de Entrega:\n";
         orderMessage += `Rua: ${street}, Nº: ${number}\n`;
         orderMessage += `Bairro: ${neighborhood}\n`;
         orderMessage += `Cidade: ${city} - ${state}\n`;
         orderMessage += `CEP: ${cep}\n\n`;
 
-        orderMessage += "*Itens do Pedido:*\n";
+        orderMessage += "Itens do Pedido:\n";
         cart.forEach((item) => {
             orderMessage += `- ${item.quantity}x ${item.title} (R$${(
                 item.price * item.quantity
@@ -68,10 +68,10 @@ const CartModal = ({
             (total, item) => total + item.price * item.quantity,
             0
         );
-        orderMessage += `\n*Total: R$ ${totalPrice.toFixed(2)}*\n`;
+        orderMessage += `\nTotal: R$ ${totalPrice.toFixed(2)}\n`;
 
         if (comment.trim()) {
-            orderMessage += `\n*Comentário:* ${comment}\n`;
+            orderMessage += `\nComentário: ${comment}\n`;
         }
 
         const phone = 5511940618163;
@@ -208,6 +208,8 @@ const CartModal = ({
                         name="comment"
                         id="comment"
                         placeholder="Ex. Lanche sem cebola"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
                     />
                 </div>
                 <h3 className={styles.label}>Endereço de Entrega</h3>
