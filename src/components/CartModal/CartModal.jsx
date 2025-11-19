@@ -13,7 +13,7 @@ const CartModal = ({
     setFlashMsg,
 }) => {
     const [error, setError] = useState(null);
-    const [comment, setComment] = useState(null)
+    const [comment, setComment] = useState(null);
     const [address, setAddress] = useState({
         street: "",
         number: "",
@@ -22,6 +22,7 @@ const CartModal = ({
         state: "",
         cep: "",
     });
+    const [name, setName] = useState(null);
 
     const handleChange = (e) => {
         setAddress({ ...address, [e.target.name]: e.target.value });
@@ -64,16 +65,19 @@ const CartModal = ({
             ).toFixed(2)})\n`;
         });
 
+        
         const totalPrice = cart.reduce(
             (total, item) => total + item.price * item.quantity,
             0
         );
-        orderMessage += `\nTotal: R$ ${totalPrice.toFixed(2)}\n`;
-
+        orderMessage += `\nTotal: R$ ${totalPrice.toFixed(2)}\n${comment.trim() ? "" : "\n"}`;
+        
         if (comment.trim()) {
-            orderMessage += `\nComentário: ${comment}\n`;
+            orderMessage += `\nComentário: ${comment}\n\n`;
         }
 
+        orderMessage += `Nome: ${name}\n`;
+        
         const phone = 5511940618163;
         const encodedMessage = encodeURIComponent(orderMessage);
 
@@ -256,6 +260,18 @@ const CartModal = ({
                         placeholder="Estado"
                         value={address.state}
                         onChange={handleChange}
+                    />
+                </div>
+
+                <div className={styles.inputContainer}>
+                    <label htmlFor="comment">Seu nome: </label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Nome e sobrenome"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                     />
                 </div>
 
