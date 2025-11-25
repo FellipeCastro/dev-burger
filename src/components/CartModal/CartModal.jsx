@@ -13,7 +13,7 @@ const CartModal = ({
     setFlashMsg,
 }) => {
     const [error, setError] = useState(null);
-    const [comment, setComment] = useState(null);
+    const [observation, setObservation] = useState(null);
     const [address, setAddress] = useState({
         street: "",
         number: "",
@@ -70,15 +70,15 @@ const CartModal = ({
             (total, item) => total + item.price * item.quantity,
             0
         );
-        orderMessage += `\nTotal: R$ ${totalPrice.toFixed(2)}\n${comment.trim() ? "" : "\n"}`;
+        orderMessage += `\nTotal: R$ ${totalPrice.toFixed(2)}\n${observation.trim() ? "" : "\n"}`;
         
-        if (comment.trim()) {
-            orderMessage += `\nComentário: ${comment}\n\n`;
+        if (observation.trim()) {
+            orderMessage += `\nComentário: ${observation}\n\n`;
         }
 
         orderMessage += `Nome: ${name}\n`;
-        
-        const phone = 5511940618163;
+
+        const phone = import.meta.env.VITE_PHONE_NUMBER;
         const encodedMessage = encodeURIComponent(orderMessage);
 
         window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");
@@ -206,14 +206,14 @@ const CartModal = ({
                 </div>
 
                 <div className={styles.inputContainer}>
-                    <label htmlFor="comment">Comentário: </label>
+                    <label htmlFor="observation">Observação: </label>
                     <input
                         type="text"
-                        name="comment"
-                        id="comment"
+                        name="observation"
+                        id="observation"
                         placeholder="Ex. Lanche sem cebola"
-                        value={comment}
-                        onChange={(e) => setComment(e.target.value)}
+                        value={observation}
+                        onChange={(e) => setObservation(e.target.value)}
                     />
                 </div>
                 <h3 className={styles.label}>Endereço de Entrega</h3>
@@ -264,7 +264,7 @@ const CartModal = ({
                 </div>
 
                 <div className={styles.inputContainer}>
-                    <label htmlFor="comment">Seu nome: </label>
+                    <label htmlFor="name">Seu nome: </label>
                     <input
                         type="text"
                         name="name"
