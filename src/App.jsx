@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import FlashMsg from "./components/FlashMsg/FlashMsg";
 import menuItems from "./constants/menuItems.js";
+import logo from "./assets/hamb-1.png";
 
 const App = () => {
     const [cart, setCart] = useState(() => {
@@ -78,11 +79,68 @@ const App = () => {
         <>
             <FlashMsg flashMsg={flashMsg} setFlashMsg={setFlashMsg} />
 
-            <Header
+            <header>
+                <a href="#" class="logo">
+                    🍔 DevBurger
+                </a>
+                <nav>
+                    <a href="#">Início</a>
+                    <a href="#cardapio">Cardápio</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <a href="#cardapio" class="btn">
+                    Peça Agora
+                </a>
+            </header>
+
+            <section id="home" class="hero-wrapper">
+                <article class="hero">
+                    <div>
+                        <h1>O Melhor Hamburguer da Cidade</h1>
+                        <p>
+                            Ingredientes frescos, receitas especiais e entrega
+                            rápida. Peça agora e receba em até 40 minutos!
+                        </p>
+                        <nav class="hero-buttons">
+                            <a id="#cardapio" class="btn">
+                                Ver cardápio
+                            </a>
+                            <a
+                                href="https://wa.me/5511999999999"
+                                class="btn btn-outline"
+                            >
+                                📲 WhatsApp
+                            </a>
+                        </nav>
+                        <ul class="hero-stats">
+                            <li>
+                                <strong>+500</strong>
+                                Cliente felizes
+                            </li>
+                            <li>
+                                <strong>4.9</strong>
+                                Avaliação ⭐
+                            </li>
+                            <li>
+                                <strong>40min</strong>
+                                Ou seu dinheiro de volta
+                            </li>
+                        </ul>
+                    </div>
+
+                    <img
+                        alt="hamburger"
+                        src={logo}
+                    />
+                </article>
+            </section>
+
+            {/* <Header
                 isRestaurantOpen={isRestaurantOpen}
                 openHour={openHour}
                 closeHour={closeHour}
-            />
+            /> */}
 
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
