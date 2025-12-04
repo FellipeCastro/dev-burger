@@ -129,10 +129,7 @@ const App = () => {
                         </ul>
                     </div>
 
-                    <img
-                        alt="hamburger"
-                        src={logo}
-                    />
+                    <img alt="hamburger" src={logo} />
                 </article>
             </section>
 
@@ -143,6 +140,45 @@ const App = () => {
             /> */}
 
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
+
+            <section id="sobre" class="about">
+                <img
+                    src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&h=500&fit=crop"
+                    alt="Nossa cozinha"
+                />
+                
+                <article>
+                    <h2>Nossa História</h2>
+                    <p>
+                        Desde 2020, a Burger House nasceu da paixão por
+                        hambúrgueres artesanais. Nosso segredo? Ingredientes
+                        selecionados e muito amor em cada preparo.
+                    </p>
+                    <ul>
+                        <li>
+                            🥩 <strong>Carne Fresca</strong> - 100% bovina
+                            selecionada
+                        </li>
+                        <li>
+                            🚀 <strong>Entrega Rápida</strong> - Máximo 40
+                            minutos
+                        </li>
+                        <li>
+                            💳 <strong>Pagamento Fácil</strong> - PIX, cartão ou
+                            dinheiro
+                        </li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="cta" class="cta">
+                <h2>Bateu a Fome?</h2>
+                <p>Faça seu pedido agora e receba em casa!</p>
+                <a href="https://wa.me/5511999999999" class="btn btn-light">
+                    📲 Pedir pelo WhatsApp
+                </a>
+            </section>
+
             <Footer setCartIsOpen={setCartIsOpen} cart={cart} />
 
             {cartIsOpen && (
