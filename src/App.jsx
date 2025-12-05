@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import CartModal from "./components/CartModal/CartModal";
+import CartModal from "./components/CartModal.jsx";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Menu from "./components/Menu/Menu";
+import Menu from "./components/Menu.jsx";
 import FlashMsg from "./components/FlashMsg/FlashMsg";
 import menuItems from "./constants/menuItems.js";
 import logo from "./assets/hamb-1.png";
@@ -117,7 +117,7 @@ const App = () => {
                     className="w-fit p-4 text-red-600 text-xl hover:brightness-90 transition-all duration-300 cursor-pointer"
                     onClick={() => setCartIsOpen(true)}
                 >
-                    <BsFillCartFill /> 
+                    <BsFillCartFill />
                     {/* <span>({cart.length})</span> */}
                 </button>
             </header>
