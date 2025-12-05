@@ -7,6 +7,14 @@ import FlashMsg from "./components/FlashMsg/FlashMsg";
 import menuItems from "./constants/menuItems.js";
 import logo from "./assets/hamb-1.png";
 import { BsFillCartFill } from "react-icons/bs";
+import {
+    FaInstagram,
+    FaFacebook,
+    FaWhatsapp,
+    FaMapMarkerAlt,
+    FaClock,
+} from "react-icons/fa";
+import { SiIfood } from "react-icons/si";
 
 const App = () => {
     const [cart, setCart] = useState(() => {
@@ -83,38 +91,38 @@ const App = () => {
             <header className="fixed top-0 left-0 right-0 flex items-center justify-between px-[5%] py-4 bg-white shadow-lg z-50">
                 <a
                     href="#"
-                    className="text-2xl font-bold text-black no-underline"
+                    className="text-2xl font-bold text-gray-900 no-underline"
                 >
                     DevBurger
                 </a>
                 <nav className="flex gap-8">
                     <a
                         href="#"
-                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-gray-900 hover:text-red-600 transition-colors duration-200"
                     >
                         Início
                     </a>
                     <a
                         href="#cardapio"
-                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-gray-900 hover:text-red-600 transition-colors duration-200"
                     >
                         Cardápio
                     </a>
                     <a
                         href="#sobre"
-                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-gray-900 hover:text-red-600 transition-colors duration-200"
                     >
                         Sobre
                     </a>
                     <a
                         href="#contato"
-                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-gray-900 hover:text-red-600 transition-colors duration-200"
                     >
                         Contato
                     </a>
                 </nav>
                 <button
-                    className="w-fit p-4 text-black text-xl hover:text-gray-600 transition-all duration-300 relative cursor-pointer"
+                    className="w-fit p-4 text-gray-900 text-xl hover:text-gray-600 transition-all duration-300 relative cursor-pointer"
                     onClick={() => setCartIsOpen(true)}
                 >
                     <BsFillCartFill />
@@ -132,10 +140,10 @@ const App = () => {
             >
                 <article className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 max-w-6xl mx-auto px-8 py-20">
                     <div>
-                        <h1 className="text-4xl font-bold leading-tight mb-4">
+                        <h1 className="text-gray-900 text-5xl font-bold leading-tight mb-4">
                             O Melhor Hamburguer da Cidade
                         </h1>
-                        <p className="text-gray-700 text-sm mb-8">
+                        <p className="text-gray-600 text-sm mb-8">
                             Ingredientes frescos, receitas especiais e entrega
                             rápida. Peça agora e receba em até 40 minutos!
                         </p>
@@ -264,7 +272,95 @@ const App = () => {
                 </a>
             </section>
 
-            {/* <Footer setCartIsOpen={setCartIsOpen} cart={cart} /> */}
+            <footer id="contato" className="bg-white border-t border-gray-200">
+                <div className="max-w-7xl mx-auto px-4 py-12">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                        <section>
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">
+                                DevBurger
+                            </h3>
+                            <p className="text-gray-600">
+                                O melhor hambúrguer artesanal da cidade.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                                Horário
+                            </h4>
+                            <p className="text-gray-600">
+                                Domingo a Domingo
+                                <br />
+                                13h às 23h
+                            </p>
+                        </section>
+
+                        <section>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                                Contato
+                            </h4>
+                            <ul className="space-y-2">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-600 hover:text-gray-900 hover:underline transition-colors flex items-center gap-2"
+                                    >
+                                        <FaWhatsapp className="text-gray-600" />
+                                        (11) 99999-9999
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-600 hover:text-gray-900 hover:underline transition-colors flex items-center gap-2"
+                                    >
+                                        <FaMapMarkerAlt className="text-gray-600" />
+                                        Rua dos Hambúrgueres, 00, São Paulo - SP
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                                Redes Sociais
+                            </h4>
+                            <ul className="flex align-center justify-start gap-4">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="w-10 h-10 bg-gray-900 rounded-md flex items-center justify-center hover:bg-gray-700"
+                                    >
+                                        <FaFacebook className="text-white text-md" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="w-10 h-10 bg-gray-900 rounded-md flex items-center justify-center hover:bg-gray-700"
+                                    >
+                                        <FaInstagram className="text-white text-md" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="w-10 h-10 bg-gray-900 rounded-md flex items-center justify-center hover:bg-gray-700"
+                                    >
+                                        <SiIfood className="text-white text-md" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <div className="border-t border-gray-200 pt-8 text-center">
+                        <div className="copy">
+                            <p className="text-gray-500">© 2025 - DevBurger</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
 
             {cartIsOpen && (
                 <CartModal
