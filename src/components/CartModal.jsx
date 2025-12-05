@@ -263,7 +263,7 @@ const CartModal = ({
                                     onChange={(e) =>
                                         setObservation(e.target.value)
                                     }
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                             </div>
 
@@ -278,7 +278,7 @@ const CartModal = ({
                                     value={address.cep}
                                     onChange={handleChange}
                                     onBlur={onBlurCep}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                                 <input
                                     type="text"
@@ -286,7 +286,7 @@ const CartModal = ({
                                     placeholder="Número"
                                     value={address.number}
                                     onChange={handleChange}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                                 <input
                                     type="text"
@@ -294,7 +294,7 @@ const CartModal = ({
                                     placeholder="Rua"
                                     value={address.street}
                                     onChange={handleChange}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                                 <input
                                     type="text"
@@ -302,7 +302,7 @@ const CartModal = ({
                                     placeholder="Bairro"
                                     value={address.neighborhood}
                                     onChange={handleChange}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                                 <input
                                     type="text"
@@ -310,7 +310,7 @@ const CartModal = ({
                                     placeholder="Cidade"
                                     value={address.city}
                                     onChange={handleChange}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                                 <input
                                     type="text"
@@ -318,7 +318,7 @@ const CartModal = ({
                                     placeholder="Estado"
                                     value={address.state}
                                     onChange={handleChange}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                             </div>
 
@@ -336,7 +336,7 @@ const CartModal = ({
                                     placeholder="Nome e sobrenome"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded"
+                                    className="w-full py-2 px-4 outline-none border border-gray-300 rounded text-sm"
                                 />
                             </div>
 
@@ -362,7 +362,7 @@ const CartModal = ({
                                 <button
                                     type="button"
                                     onClick={handleFinalizeOrder}
-                                    className="inline-flex justify-center rounded-md bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800"
+                                    className="inline-flex justify-center rounded-md bg-green-700 px-4 py-2 text-sm font-semibold text-white hover:bg-green-800 cursor-pointer"
                                 >
                                     Finalizar pedido
                                 </button>

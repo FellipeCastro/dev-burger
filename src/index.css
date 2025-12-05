@@ -20,4 +20,6 @@
     font-family: "Montserrat", serif;
 }
 
-
+html, body {
+    scroll-behavior: smooth;
+}

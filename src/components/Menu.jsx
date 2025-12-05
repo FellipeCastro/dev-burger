@@ -4,7 +4,7 @@ const Menu = ({ menuItems, addOnCart, cart }) => {
     const categories = [...new Set(menuItems.map((item) => item.category))];
 
     return (
-        <section className="w-full px-[5%] py-12 md:py-20">
+        <section className="w-full px-[5%] py-12 md:py-20" id="cardapio">
             {/* Título principal */}
             <h1 className="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12">
                 Conheça nosso cardápio

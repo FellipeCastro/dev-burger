@@ -90,41 +90,45 @@ const App = () => {
                 <nav className="flex gap-8">
                     <a
                         href="#"
-                        className="font-semibold text-gray-700 hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
                     >
                         Início
                     </a>
                     <a
                         href="#cardapio"
-                        className="font-semibold text-gray-700 hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
                     >
                         Cardápio
                     </a>
                     <a
                         href="#sobre"
-                        className="font-semibold text-gray-700 hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
                     >
                         Sobre
                     </a>
                     <a
                         href="#contato"
-                        className="font-semibold text-gray-700 hover:text-red-600 transition-colors duration-200"
+                        className="font-semibold text-black hover:text-red-600 transition-colors duration-200"
                     >
                         Contato
                     </a>
                 </nav>
                 <button
-                    className="w-fit p-4 text-red-600 text-xl hover:brightness-90 transition-all duration-300 cursor-pointer"
+                    className="w-fit p-4 text-black text-xl hover:text-gray-600 transition-all duration-300 relative cursor-pointer"
                     onClick={() => setCartIsOpen(true)}
                 >
                     <BsFillCartFill />
-                    {/* <span>({cart.length})</span> */}
+                    {cart.length > 0 && (
+                        <span className="absolute top-1 right-1 bg-red-600 text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                            {cart.length}
+                        </span>
+                    )}
                 </button>
             </header>
 
             <section
                 id="home"
-                className="bg-gradient-to-b from-gray-50 to-red-200 pt-20 shadow-lg"
+                className="bg-gradient-to-b from-gray-50 to-red-100 pt-20 shadow-lg"
             >
                 <article className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16 max-w-6xl mx-auto px-8 py-20">
                     <div>
@@ -138,13 +142,13 @@ const App = () => {
                         <nav className="flex gap-4 mb-12">
                             <a
                                 href="#cardapio"
-                                className="w-fit bg-red-600 px-5 py-4 text-white rounded-md font-semibold text-sm hover:brightness-90 transition-all duration-300 cursor-pointer"
+                                className="w-fit bg-red-600 px-6 py-3 text-white rounded-md font-semibold text-sm hover:bg-red-700 transition-all duration-300 cursor-pointer"
                             >
                                 Ver cardápio
                             </a>
                             <a
                                 href="https://wa.me/5511999999999"
-                                className="w-fit border-2 border-red-600 bg-transparent px-5 py-4 text-red-600 rounded-md font-semibold text-sm hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer"
+                                className="w-fit border-2 border-red-600 bg-transparent px-6 py-3 text-red-600 rounded-md font-semibold text-sm hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer"
                             >
                                 📲 WhatsApp
                             </a>
@@ -180,27 +184,21 @@ const App = () => {
                     <img
                         alt="hamburger"
                         src={logo}
-                        className="rounded-2xl shadow-2xl w-full h-auto max-w-lg mx-auto"
+                        className="rounded-lg shadow-2xl w-full h-auto max-w-md mx-auto"
                     />
                 </article>
             </section>
-
-            {/* <Header
-                isRestaurantOpen={isRestaurantOpen}
-                openHour={openHour}
-                closeHour={closeHour}
-            /> */}
 
             <Menu menuItems={menuItems} addOnCart={addOnCart} cart={cart} />
 
             <section
                 id="sobre"
-                className="flex flex-col lg:flex-row items-center justify-center gap-8 px-[5%] py-16 bg-gradient-to-t from-gray-50 to-red-100 shadow-lg"
+                className="flex flex-col lg:flex-row items-center justify-center gap-8 px-32 py-16 bg-gradient-to-t from-gray-50 to-red-100"
             >
                 <img
                     src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&h=500&fit=crop"
                     alt="Nossa cozinha"
-                    className="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-lg"
+                    className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-lg"
                 />
 
                 <article className="max-w-lg">
@@ -260,7 +258,7 @@ const App = () => {
                 </p>
                 <a
                     href="https://wa.me/5511999999999"
-                    className="w-fit bg-white px-6 py-4 text-red-600 rounded-md font-semibold text-sm hover:bg-gray-100 hover:brightness-95 transition-all duration-300 cursor-pointer shadow-md"
+                    className="w-fit bg-white px-6 py-4 text-red-600 rounded-md font-semibold text-sm hover:bg-gray-200 transition-all duration-300 cursor-pointer shadow-md"
                 >
                     📲 Pedir pelo WhatsApp
                 </a>
