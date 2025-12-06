@@ -235,7 +235,7 @@ const CartModal = ({
                                 ))}
                                 {cart.length === 0 && (
                                     <>
-                                        <p className="text-center font-bold text-gray-500 mt-4">
+                                        <p className="text-center font-bold text-gray-400 mt-4">
                                             Opsss! Seu carrinho está vazio.
                                         </p>
                                         <img
@@ -368,7 +368,7 @@ const CartModal = ({
                                 </button>
                             </div>
 
-                            <div className="w-full text-justify font-bold text-sm text-gray-500">
+                            <div className="w-full text-justify font-bold text-sm text-gray-400">
                                 <p>
                                     Após finalizar o pedido, você será
                                     redirecionado para o nosso WhatsApp, onde
