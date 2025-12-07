@@ -3,7 +3,7 @@ import FlashMsg from "./components/FlashMsg.jsx";
 import Header from "./components/Header.jsx";
 import Home from "./components/Home.jsx";
 import Menu from "./components/Menu.jsx";
-import Cta from "./components/cta.jsx";
+import Cta from "./components/Cta.jsx";
 import About from "./components/About.jsx";
 import Footer from "./components/Footer.jsx";
 import CartModal from "./components/CartModal.jsx";
