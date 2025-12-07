@@ -2,6 +2,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/hamb-1.png";
 
 const Home = () => {
+    const phone = import.meta.env.VITE_PHONE_NUMBER;
+
     return (
         <section
             id="home"
@@ -24,9 +26,9 @@ const Home = () => {
                             Ver cardápio
                         </a>
                         <a
-                            href="https://wa.me/5511940618163"
+                            href={`https://wa.me/${phone}`}
                             target="_blank"
-                            className="w-full flex items-center gap-2 sm:w-fit border-2 border-red-600 bg-transparent px-6 py-3 text-red-600 rounded-md font-semibold text-sm hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer text-center"
+                            className="w-full flex items-center justify-center gap-2 sm:w-fit border-2 border-red-600 bg-transparent px-6 py-3 text-red-600 rounded-md font-semibold text-sm hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer text-center"
                         >
                             <FaWhatsapp className="text-base" /> WhatsApp
                         </a>

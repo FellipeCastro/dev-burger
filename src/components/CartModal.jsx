@@ -84,7 +84,7 @@ const CartModal = ({
 
         orderMessage += `Nome: ${name}\n`;
 
-        const phone = 5511940618163;
+        const phone = import.meta.env.VITE_PHONE_NUMBER;
         const encodedMessage = encodeURIComponent(orderMessage);
 
         window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");

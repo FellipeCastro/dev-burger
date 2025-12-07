@@ -77,6 +77,8 @@ const App = () => {
 
     const isRestaurantOpen = checkRestaurantOpen();
 
+    const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
+
     return (
         <>
             <FlashMsg flashMsg={flashMsg} setFlashMsg={setFlashMsg} />

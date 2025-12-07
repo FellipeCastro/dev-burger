@@ -1,6 +1,8 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 const Cta = () => {
+    const phone = import.meta.env.VITE_PHONE_NUMBER;
+
     return (
         <section
             id="cta"
@@ -13,9 +15,9 @@ const Cta = () => {
                 Faça seu pedido agora e receba em casa!
             </p>
             <a
-                href="https://wa.me/5511999999999"
+                href={`https://wa.me/${phone}`}
                 target="_blank"
-                className="w-full flex items-center gap-2 sm:w-fit bg-white px-6 py-3 sm:py-4 text-red-600 rounded-md font-semibold text-sm hover:bg-gray-200 transition-all duration-300 cursor-pointer shadow-md text-center"
+                className="w-full flex items-center justify-center gap-2 sm:w-fit bg-white px-6 py-3 sm:py-4 text-red-600 rounded-md font-semibold text-sm hover:bg-gray-200 transition-all duration-300 cursor-pointer shadow-md text-center"
             >
                 <FaWhatsapp className="text-xl" /> Pedir pelo WhatsApp
             </a>

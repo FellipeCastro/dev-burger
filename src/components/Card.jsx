@@ -2,7 +2,7 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 
 const Card = ({ title, img, description, price, quantity, addOnCart }) => {
     return (
-        <div className="w-full grid grid-cols-3 lg:grid-cols-5 gap-4 bg-white">
+        <div className="w-full grid items-center grid-cols-3 lg:grid-cols-5 gap-4 bg-white">
             <div className="col-span-1 rounded-lg overflow-hidden aspect-square">
                 <img
                     src={img}
@@ -24,7 +24,7 @@ const Card = ({ title, img, description, price, quantity, addOnCart }) => {
 
                 <div className="flex items-center justify-between mt-2">
                     <div className="flex items-center gap-2">
-                        <span className="text-lg font-bold text-red-600">
+                        <span className="text-md font-bold text-red-600">
                             R$ {price.toFixed(2)}
                         </span>
                         {quantity > 0 && (
