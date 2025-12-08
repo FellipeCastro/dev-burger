@@ -57,28 +57,14 @@ const Footer = ({ isRestaurantOpen }) => {
                         <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
                             Contato
                         </h4>
-                        <ul className="space-y-2">
-                            <li>
-                                <a
-                                    href="#"
-                                    target="_blank"
-                                    className="text-gray-600 hover:text-gray-900 hover:underline transition-colors flex items-center gap-2 text-sm sm:text-base"
-                                >
-                                    <FaWhatsapp className="text-gray-600 flex-shrink-0" />
-                                    (11) 99999-9999
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    target="_blank"
-                                    className="text-gray-600 hover:text-gray-900 hover:underline transition-colors flex items-center gap-2 text-sm sm:text-base"
-                                >
-                                    <FaMapMarkerAlt className="text-gray-600 flex-shrink-0" />
-                                    Rua dos Hambúrgueres, 00, São Paulo - SP
-                                </a>
-                            </li>
-                        </ul>
+                        <a
+                            href="#"
+                            target="_blank"
+                            className="text-gray-600 hover:text-gray-900 hover:underline transition-colors flex items-center gap-2 text-sm sm:text-base"
+                        >
+                            <FaMapMarkerAlt className="text-gray-600 flex-shrink-0" />
+                            Rua dos Hambúrgueres, 123 - SP
+                        </a>
                     </section>
 
                     <section>
@@ -113,7 +99,7 @@ const Footer = ({ isRestaurantOpen }) => {
                                     className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-900 rounded-md flex items-center justify-center hover:bg-gray-700 transition-colors"
                                     aria-label="iFood"
                                 >
-                                    <SiIfood className="text-white text-sm sm:text-base" />
+                                    <FaWhatsapp className="text-white text-sm sm:text-base" />
                                 </a>
                             </li>
                         </ul>

@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <section
             id="home"
-            className="bg-gradient-to-b from-gray-50 to-red-100 pt-16 md:pt-20 shadow-lg"
+            className="bg-gradient-to-b from-gray-50 to-red-50 pt-16 md:pt-20 shadow-md"
         >
             <article className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
                 <div className="order-2 lg:order-1">
@@ -39,7 +39,7 @@ const Home = () => {
                                 +500
                             </strong>
                             <span className="text-gray-700 text-sm">
-                                Clientes felizes
+                                Clientes felizes 😁
                             </span>
                         </li>
                         <li className="flex flex-col items-center sm:items-start">
@@ -55,7 +55,7 @@ const Home = () => {
                                 40min
                             </strong>
                             <span className="text-gray-700 text-sm">
-                                Ou seu dinheiro de volta
+                                Ou seu dinheiro de volta ⏳
                             </span>
                         </li>
                     </ul>

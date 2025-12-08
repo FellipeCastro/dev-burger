@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import {
     Dialog,
     DialogBackdrop,
@@ -171,9 +172,9 @@ const CartModal = ({
                                 <button
                                     type="button"
                                     onClick={closeModal}
-                                    className="px-3 py-2 text-sm border-none rounded text-gray-500 bg-transparent font-bold cursor-pointer transition-colors duration-200 hover:text-gray-400"
+                                    className="w-10 h-10 flex items-center justify-center text-sm border-none rounded-full text-gray-500 bg-transparent cursor-pointer duration-200 hover:bg-gray-100"
                                 >
-                                    Fechar
+                                    <IoClose className="text-2xl" />
                                 </button>
                             </div>
 
@@ -235,13 +236,13 @@ const CartModal = ({
                                 ))}
                                 {cart.length === 0 && (
                                     <>
-                                        <p className="text-center font-bold text-gray-400 mt-4">
+                                        <p className="text-center font-semibold text-gray-400 mt-4">
                                             Opsss! Seu carrinho está vazio.
                                         </p>
                                         <img
                                             src={cookingBro}
                                             alt="Carrinho Vazio"
-                                            className="block mx-auto h-[30vh] mt-2"
+                                            className="block mx-auto h-[30vh]"
                                         />
                                     </>
                                 )}
@@ -341,7 +342,7 @@ const CartModal = ({
                             </div>
 
                             {error !== null && (
-                                <div className="w-full text-center font-bold text-sm bg-red-100 text-red-600 rounded p-4 mb-2">
+                                <div className="w-full text-center font-bold text-xs bg-red-100 text-red-600 rounded p-3 mb-2">
                                     <p>{error}</p>
                                 </div>
                             )}
@@ -368,7 +369,7 @@ const CartModal = ({
                                 </button>
                             </div>
 
-                            <div className="w-full text-justify font-bold text-sm text-gray-400">
+                            <div className="w-full text-justify font-semibold text-sm text-gray-400">
                                 <p>
                                     Após finalizar o pedido, você será
                                     redirecionado para o nosso WhatsApp, onde

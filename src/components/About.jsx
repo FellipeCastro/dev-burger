@@ -2,7 +2,7 @@ const About = () => {
     return (
         <section
             id="sobre"
-            className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 sm:px-6 lg:px-32 py-10 sm:py-16 bg-gradient-to-t from-gray-50 to-red-100"
+            className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 sm:px-6 lg:px-32 py-10 sm:py-16 bg-gradient-to-t from-gray-50 to-red-50 shadow-md"
         >
             <img
                 src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&h=500&fit=crop"
