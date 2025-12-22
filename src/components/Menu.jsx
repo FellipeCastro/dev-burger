@@ -17,7 +17,7 @@ const Menu = ({ menuItems, addOnCart, cart }) => {
                             {category}
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {menuItems
                                 .filter((item) => item.category === category)
                                 .map((item) => {
